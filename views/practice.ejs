@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title><%=title%></title>
+  </head>
+  <body>
+    <h1><%= title%></h1>
+    <ul>
+      <li>List 0</li>
+      <%for(let i=1;i<=10;i++) {%>
+      <li>List <%= i %></li>
+      <%}%>
+    </ul>
+
+    <% let flag=true; if(flag) { %>
+    <span>This is TRUE span</span>
+    <%} else {%>
+    <span>This is FALSE span</span>
+    <%}%>
+  </body>
+</html>
