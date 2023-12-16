@@ -1,21 +1,9 @@
-
-// importing express
-const express= require('express');
-
-// creating new router variable
+const express = require("express");
 const router = express.Router();
+const { home, createHabit } = require("../controller/homeController");
 
-// getting home controller for the router
-const homeController = require('../controller/homeController');
+router.get("/", home);
+router.post("/addhabit", createHabit);
+router.use("/listhabits", require("./myHabits"));
 
-// calling controller for the home page
-router.get('/',homeController.home);
-
-// route to creating a new habit
-router.post('/create-habit',homeController.createHabit);
-
-// route for details page
-router.use('/my-habits',require('./myHabits'));
-
-// exporting the router for outside use
 module.exports = router;

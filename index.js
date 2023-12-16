@@ -4,12 +4,7 @@ require("./config/mongoose").connect();
 // exporting all the function and libraries of express
 const express = require("express");
 
-// path variable
-const path = require("path");
-
-// port id
-// const {PORT} = process.env;
-let PORT = 4002;
+const config = require("./config/config");
 
 // app having all the function of express and firing up our framework
 const app = express();
@@ -41,10 +36,15 @@ app.set("views", "./views");
 app.use("/", require("./routes"));
 
 // starting server
-app.listen(PORT, function (err) {
+app.listen(config.PORT, function (err) {
   if (err) {
     console.log("Error", err);
     return;
   }
-  console.log(`server is running on port:${PORT}`);
+  console.table([
+    {
+      PORT: Number(config.PORT),
+      ENV: config.config.toUpperCase(),
+    },
+  ]);
 });
