@@ -37,14 +37,6 @@
 }
 
 /*  */
-#addHabitContainer {
-  height: 15%;
-  background-color: #85e6c5;
-}
-
-#addHabitContainer span {
-  color: #33bbc5;
-}
 
 /* list of habits on the home page  */
 #habitList {
@@ -61,13 +53,20 @@
   color: var(--light-color);
 }
 
-.sticky-div {
-  background-color: green;
-  position: sticky;
-  top: 0px;
-  padding: 10px 0px;
+.sticky-div button {
+  position: fixed;
+  bottom: 5vh; /* Adjust as needed */
+  right: 19vw; /* Adjust as needed */
+  font-size: 3rem;
+  color: var(--yellow-two);
+  background-color: transparent;
+  padding: 15px;
+  border: none;
 }
 
+.sticky-div button:hover {
+  background-color: var(--light-color);
+}
 .start {
   height: 100px;
 }
